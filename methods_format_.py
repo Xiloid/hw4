@@ -14,7 +14,10 @@
         Результат: "some edited string".
     (Использовать форматирование строк f либо метод format)
 """
-''' low_char = big_char = i = 0
+# 1. Если в строке больше символов в нижнем регистре - вывести все в нижнем,
+# если больше в верхнем - вывести все в верхнем,
+# если поровну - вывести в противоположных регистрах.
+low_char = big_char = i = 0
 string = input('Введите строку: ')
 for i in string:
     if str.isupper(i):
@@ -26,22 +29,24 @@ if big_char > low_char:
 elif big_char < low_char:
     print('Больше строчных: ', string.lower())
 else:
-    print('Заглавных и строчных поровну:', string.swapcase()) '''
+    print('Заглавных и строчных поровну:', string.swapcase())
 
+# 2. Если в строке каждое слово начинается с заглавной буквы, тогда
+# добавить в начало строки 'done. '.
+# Иначе заменить первые 5 элементов строки на 'draft: '.
+flag = 0
+flag2 = 0
 string = input('Введите строку: ')
-count = flag = numlet = ind = big = 0
-string = input('Введите строку: ')
-for i in range(len(string)):
-    if string[i] != ' ' and flag == 0:
-        count += 1
+for i in string:
+    if i != ' ' and flag == 0:
         flag = 1
+        if i.islower():
+            flag2 = 1
     else:
-        if string[i] == ' ':
+        if i == ' ':
             flag = 0
-    if string[i] != ' ':
-        numlet += 1  # считаем количество букв в слове
-    else:
-        if numlet > big:  # сравниваем длины слов и запоминаем индекс начала
-            big = numlet
-            ind = i - numlet  # индекс начала слова
-        numlet = 0
+if flag2 == 0:
+    print(f'done.', string)
+else:
+    repl = string[0:4]
+    print(string.replace(repl, 'draft: '))
