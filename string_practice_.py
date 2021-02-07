@@ -24,7 +24,11 @@ print('4) Обрезок строки:', new_string[l:l2])
 # 5. Продублируйте первую половину строки 3 раза и склейте с второй половиной
 #    и выведите на экран.
 #    Результат: 'Lorem Ipsum is simply dummy tLorem Ipsum is simply dummy tLorem Ipsum is simply dummy text of the printing industry.'
-
+cutted = len(new_string) // 2
+cutted_start = new_string[0:cutted]
+cutted_end = new_string[cutted:len(new_string)]
+new_string2 = cutted_start * 3 + cutted_end
+print('5) Продублированная и склеенная строка:', new_string2)
 
 
 
