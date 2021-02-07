@@ -14,12 +14,10 @@
         Результат: "some edited string".
     (Использовать форматирование строк f либо метод format)
 """
-# 1. Если в строке больше символов в нижнем регистре - вывести все в нижнем,
-# если больше в верхнем - вывести все в верхнем,
-# если поровну - вывести в противоположных регистрах.
+flag = flag2 = 0
 low_char = big_char = i = 0
 string = input('Введите строку: ')
-for i in string:
+for i in string:                                                    # ПЕРВЫЙ ПУНКТ ЗАДАНИЯ
     if str.isupper(i):
         big_char += 1
     elif str.islower(i):
@@ -30,14 +28,7 @@ elif big_char < low_char:
     print('Больше строчных: ', string.lower())
 else:
     print('Заглавных и строчных поровну:', string.swapcase())
-
-# 2. Если в строке каждое слово начинается с заглавной буквы, тогда
-# добавить в начало строки 'done. '.
-# Иначе заменить первые 5 элементов строки на 'draft: '.
-flag = 0
-flag2 = 0
-string = input('Введите строку: ')
-for i in string:
+for i in string:                                                     # ВТОРОЙ ПУНКТ ЗАДАНИЯ
     if i != ' ' and flag == 0:
         flag = 1
         if i.islower():
@@ -46,7 +37,13 @@ for i in string:
         if i == ' ':
             flag = 0
 if flag2 == 0:
-    print(f'done.', string)
+    print('DONE.', string)
 else:
     repl = string[0:4]
-    print(string.replace(repl, 'draft: '))
+    print(string.replace(repl, 'DRAFT: '))
+long = len(string)                                                  # ТРЕТИЙ ПУНКТ ЗАДАНИЯ
+if long > 20:
+    string = string[:20]
+    print('Обрезанная строка до 20 символов: ', string)
+else:
+    print('Дополненная строка до 20 символов:', string.ljust(20, '@'))
