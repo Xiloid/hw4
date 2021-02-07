@@ -5,5 +5,21 @@
     Если цифр в номере недостаточно, чтобы описать номер в нужном формате -
         попросить пользователя повторить ввод.
 """
+myString = None
+count = 0
+while count != 12:
+    a = []
+    phone = input('Введите номер телефона: ')
+    for i in phone:
+        if i.isdigit():
+            a.append(i)
+            count += 1
+    if count == 12:
+        myString = "".join(a)
+    else:
+        print('Повторите ввод! Телефон должен содержать 12 цифр!')
+        count = 0
+print('Номер телефона в необходимом формате: ', myString)
 
-phone = input('Enter phone number: ')
+
+
