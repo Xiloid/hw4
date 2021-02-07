@@ -13,11 +13,11 @@ for i in range(len(string)):
         if string[i] == ' ':
             flag = 0
     if string[i] != ' ':
-        numlet += 1  # считаем количество букв в слове
+        numlet += 1
     else:
-        if numlet > big:  # сравниваем длины слов и запоминаем индекс начала
+        if numlet > big:
             big = numlet
-            ind = i - numlet  # индекс начала слова
+            ind = i - numlet
         numlet = 0
 if numlet > big:
     m = numlet
