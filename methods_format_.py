@@ -37,9 +37,9 @@ for i in string:                                                     # ВТОР�
         if i == ' ':
             flag = 0
 if flag2 == 0:
-    print('DONE.', string)
+    print('DONE: ', string)
 else:
-    repl = string[0:4]
+    repl = string[:5]
     print(string.replace(repl, 'DRAFT: '))
 long = len(string)                                                  # ТРЕТИЙ ПУНКТ ЗАДАНИЯ
 if long > 20:
